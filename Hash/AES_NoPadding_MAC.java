@@ -1,11 +1,11 @@
-package hash;
+package Hash;
 
 import java.security.Key;
 import java.security.MessageDigest;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
-import util.CryptoTools;
+import Utility.CryptoTools;
 
 public class AES_NoPadding_MAC {
 	public static void main(String[] args) throws Exception
@@ -19,8 +19,6 @@ public class AES_NoPadding_MAC {
 		cipher.init(Cipher.ENCRYPT_MODE, secret);
 		byte[] ct = cipher.doFinal(hash);
 		
-		System.out.println("MAC = " + CryptoTools.bytesToHex(ct));
-		
-		//C1B5344759C4F2DD0D415A8064CA5DA8
+		System.out.println("MAC = " + CryptoTools.bytesToHex(ct));		//Test Case: C1B5344759C4F2DD0D415A8064CA5DA8
 	}
 }
