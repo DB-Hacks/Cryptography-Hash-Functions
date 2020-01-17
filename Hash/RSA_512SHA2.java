@@ -1,4 +1,4 @@
-package hash;
+package Hash;
 
 import java.math.BigInteger;
 import java.security.KeyFactory;
@@ -7,10 +7,8 @@ import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.spec.RSAPrivateKeySpec;
 import java.security.spec.RSAPublicKeySpec;
-
 import javax.crypto.Cipher;
-
-import util.CryptoTools;
+import Utility.CryptoTools;
 
 public class RSA_512SHA2 {
 	public static void main(String[] args) throws Exception
@@ -31,10 +29,6 @@ public class RSA_512SHA2 {
 		
 		cipher.init(Cipher.ENCRYPT_MODE, priv);
 		byte[] ct = cipher.doFinal(hash);
-		System.out.println(CryptoTools.bytesToHex(ct));
-		
-		cipher.init(Cipher.DECRYPT_MODE, pub);
-		byte[] bk = cipher.doFinal(ct);
-		System.out.println(CryptoTools.bytesToHex(bk));
+		System.out.println(CryptoTools.bytesToHex(ct));		//Test Case: 6E35DFF59080D683C34C548F8A5E0B9077DBB709F96D7FBDEEF90A5134C7F6AE06A49C57A81C834CBA773A0A441DDFB91D50BADF03E86C56A713E9B37589DC7C099734CC4BC77A3CAAC929300AB92E2FAB468A57B4A70F782A6058D3795723DA25C42B4CA48E13DEE91D2823653E1A54BD23D8AE25C7AD3C64DF4BCC2CB8C474
 	}
 }
